@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: gxanshu/astro-decap-cms-starter #replace with your githu repo
+  repo: TeeWallz/monty-astro-decap-cms
   branch: main
   squash_merges: true
   open_authoring: true
