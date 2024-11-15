@@ -3,9 +3,9 @@ backend:
   repo: TeeWallz/monty-astro-decap-cms
   branch: main
   squash_merges: true
-  open_authoring: true
+  # open_authoring: true
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 media_folder: public/images
 public_folder: /images
 site_url: "https://astro-decapcms-starter.netlify.app/" # your site name
@@ -24,3 +24,17 @@ collections:
       - {label: "Publish", name: "isPublish", widget: "boolean", default: true}
       - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
       - { name: body, label: Body, widget: markdown }
+
+  - name: chump
+    label: Chumps
+    folder: src/content/chumps
+    create: true
+    format: frontmatter
+    preview_path: chump/{{slug}}
+    fields:
+      - { name: name, label: Name, widget: "string" }
+      - { name: date, label: Date, widget: "date" }
+      - { name: thanks, label: Thanks, widget: "string" }
+      - { name: url, label: URL, widget: "string" }
+      - { name: image, label: Image, widget: "image" }
+      - { name: media, label: Media, widget: "list", field: { widget: "image" } }
