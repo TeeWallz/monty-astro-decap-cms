@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
-  repo: TeeWallz/monty-astro-decap-cms
+  # name: git-gateway
+  # repo: TeeWallz/monty-astro-decap-cms
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
   branch: main
   squash_merges: true
   # open_authoring: true
@@ -30,11 +32,21 @@ collections:
     folder: src/content/chumps
     create: true
     format: frontmatter
-    preview_path: chump/{{slug}}
+    slug: "{{date}}{{name_slug}}"
+    preview_path: chump/{{date}}
     fields:
       - { name: name, label: Name, widget: "string" }
-      - { name: date, label: Date, widget: "date" }
+      - { name: name_slug, default: "_short-name-with-dashes", label: "Short name. One word. Same date tiebreaker", widget: "string" }
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        default: "{{now}}"
+        date_format: "YYYY-MM-DD" # e.g. 24.12.2021
+        # time_format: "HH:mm" # e.g. 21:07
+        # timeFormat: false
+        # format: "YYYY-MM-DD"
+        picker_utc: false
       - { name: thanks, label: Thanks, widget: "string" }
       - { name: url, label: URL, widget: "string" }
       - { name: image, label: Image, widget: "image" }
-      - { name: media, label: Media, widget: "list", field: { widget: "image" } }
+      - { name: media, label: Media, widget: "list", required: false, field: { name: file, widget: "image" } }

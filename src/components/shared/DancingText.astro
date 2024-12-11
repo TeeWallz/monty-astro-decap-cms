@@ -1,0 +1,20 @@
+---
+type Props = {
+  text: string;
+}
+
+const { text } = Astro.props;
+
+// this converts each character into a series of gifs, s tored in /images/dancing_text/*.gif
+const textArray = text.split("");
+---
+
+<div style="height: 100%">
+  {textArray.map((char, index) => (
+    <img
+      src={`/images/dancing_text/${char}.gif`}
+      alt={char}
+      style={`animation: dance 1s infinite ${index * 0.1}s; height: 100%;`}
+    />
+  ))}
+</div>

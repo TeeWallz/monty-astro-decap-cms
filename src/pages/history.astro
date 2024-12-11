@@ -1,0 +1,62 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@/layouts/Layout.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
+import PostCard from "@/components/PostCard.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import Link from "@/components/shared/Link.astro";
+import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
+
+import presentation from "@/data/presentation";
+import projects from "@/data/projects";
+import { enrichChumpData } from "@/utils/chump_calculations";
+
+const posts = await getCollection("posts");
+let rawChumps = await getCollection("chumps");
+let enrichedChumps = enrichChumpData(rawChumps);
+
+---
+
+<!-- <Layout title="History">
+  <main class="flex flex-col gap-20">
+    <article class="flex flex-col gap-4 text-center">
+      <div>
+        {enrichedChumps.map((chump) => (
+          <div>
+            {chump.data.name} on {chump.data.date.toLocaleDateString("en-GB", {
+              weekday: "long",
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+          </div>
+        ))}
+      </div>
+    </article>
+  </main> -->
+
+  <!-- above, but in a vertical boxes using tailwind -->
+    <Layout title="History">
+    <main class="flex flex-col gap-20">
+        <article class="flex flex-col gap-4 text-center">
+            <div class="grid grid-cols-1 gap-4">
+            {enrichedChumps.map((chump) => (
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                <div class="text-lg font-bold">
+                    {chump.data.name}
+                </div>
+                <div>
+                    {chump.data.date.toLocaleDateString("en-GB", {
+                    weekday: "long",
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                    })}
+                </div>
+                </div>
+            ))}
+            </div>
+        </article>
+    </main>
+    </Layout>

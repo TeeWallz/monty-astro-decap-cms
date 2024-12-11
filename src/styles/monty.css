@@ -1,0 +1,314 @@
+/* .background{
+  background: repeating-linear-gradient(
+    to right,
+    #ca7c66,
+    #ca7c66 40px,
+    #d2c5ad 40px,
+    #d2c5ad 80px
+  );
+} */
+
+/* above, but colors are lighter */
+.background {
+  background: repeating-linear-gradient(
+    to right,
+    #f0b8a3,
+    #f0b8a3 40px,
+    #f0d9c4 40px,
+    #f0d9c4 80px
+  );
+}
+
+.main_container {
+  overflow: auto;
+  /* border-radius: 5px; */
+  /* border-radius: 0 0 5px 5px; */
+  /* border: 1px solid hotpink; */
+  background-repeat: repeat-y;
+  background-attachment: scroll;
+  background: blue url(http://cs.gettysburg.edu/%7Eduncjo01/archive/patterns/rejects/176.png) repeat;
+  background-size: auto;
+  background-origin: padding-box;
+  background-clip: border-box;
+}
+
+.center-everything {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  text-align: center;     /* Centers text */
+  margin: 0;              /* Removes margin to avoid extra spacing */
+}
+
+.gif-border {
+  display: inline-block; /* Ensures the div wraps tightly around the image */
+  position: relative; /* For better control */
+  padding: 16px; /* Adjust this for the border thickness */
+  background: url('images/fire_border.gif') center/contain no-repeat; /* GIF border */
+  border-radius: 8px; /* Optional, if your GIF supports rounded corners */
+}
+
+
+.gif-border img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes extra whitespace */
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px red solid;
+  width: 100%;
+}
+.image2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px green solid;
+  width: 100%;
+}
+
+.cute-border {
+  padding: 5px;
+  position: relative;
+  outline: 1px solid #fff;
+  outline-offset: -3px;
+  border-radius: 0.5em 0;
+  border: 4px double #f784c7;
+  box-shadow: 2px 2px 2px #9b949e;
+  background: #FAEBD7;
+}
+
+
+
+.sitely li {
+  margin-left: 1px;
+  transition: margin-left 0.3s ease;
+}
+
+.sitely li:hover {
+  margin-left: 15px;
+}
+
+.sitely .button {
+  width: 100%;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin: auto;
+  background-image: url("https://i.imgur.com/Aw0QxIi.png");
+}
+
+.sitely .text {
+  color: #fff8ea;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: ms pgothic;
+  filter: drop-shadow(1px 1px 1px white);
+  text-align: center;
+  text-shadow: rgb(237, 136, 74) 2px 0px 0px, rgb(237, 136, 74) 1.75517px 0.958851px 0px, rgb(237, 136, 74) 1.0806px 1.68294px 0px, rgb(237, 136, 74) 0.141474px 1.99499px 0px, rgb(237, 136, 74) -0.832294px 1.81859px 0px, rgb(237, 136, 74) -1.60229px 1.19694px 0px, rgb(237, 136, 74) -1.97998px 0.28224px 0px, rgb(237, 136, 74) -1.87291px -0.701566px 0px, rgb(237, 136, 74) -1.30729px -1.5136px 0px, rgb(237, 136, 74) -0.421592px -1.95506px 0px, rgb(237, 136, 74) 0.567324px -1.91785px 0px, rgb(237, 136, 74) 1.41734px -1.41108px 0px, rgb(237, 136, 74) 1.92034px -0.558831px 0px;
+  font-family: 'ADLaM Display';
+  font-size: 22px;
+
+}
+
+
+
+
+.sitely .link-button a {
+  color: blue;
+}
+
+.sitely li {
+  width: 10em;
+  font-size: 15px;
+  font-family: 'ADLaM Display';
+  color: white;
+  text-shadow: 2px 2px 0 #696969, 2px -2px 0 #696969, -2px 2px 0 #696969, -2px -2px 0 #696969, 2px 0px 0 #696969, 0px 2px 0 #696969, -2px 0px 0 #696969, 0px -2px 0 #696969, 0px 2px 2px rgba(206, 89, 55, 0);
+  padding-top: 10px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  /* height: 25px; */
+  border-bottom: 0px solid turquoise;
+  box-shadow: -1px -1.4px 1px inset #969c9e, 2px 3px 1.5px inset white, 0px 0px 2px #a4aaab;
+  background: rgb(158, 158, 158);
+  background: linear-gradient(to bottom, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%);
+}
+
+.sitely li:hover {
+  background: linear-gradient(to bottom, rgba(247, 255, 253, 1) 1%, rgba(217, 255, 255, 1) 8%, rgba(197, 255, 255, 1) 19%, rgba(197, 255, 255, 1) 19%, rgba(186, 247, 252, 1) 27%, rgba(193, 254, 255, 1) 46%, rgba(217, 255, 255, 1) 68%, rgba(217, 255, 255, 1) 79%, rgba(217, 255, 255, 1) 92%);
+  text-shadow: 2px 2px 0 #23a1c4, 2px -2px 0 #23a1c4, -2px 2px 0 #23a1c4, -2px -2px 0 #23a1c4, 2px 0px 0 #23a1c4, 0px 2px 0 #23a1c4, -2px 0px 0 #23a1c4, 0px -2px 0 #23a1c4, 0px 2px 2px rgba(206, 89, 55, 0);
+}
+
+.personal li:hover {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fcfcf4+1,ffffc9+8,ffffc9+12,ffe37f+18,fff5a5+31,ffffb1+58,ffffc9+74,ffffc9+86,ffffe0+92 */
+  background: linear-gradient(to bottom, rgba(252, 252, 244, 1) 1%, rgba(255, 255, 201, 1) 8%, rgba(255, 255, 201, 1) 12%, rgba(255, 227, 127, 1) 18%, rgba(255, 245, 165, 1) 31%, rgba(255, 255, 177, 1) 58%, rgba(255, 255, 201, 1) 74%, rgba(255, 255, 201, 1) 86%, rgba(255, 255, 224, 1) 92%);
+  text-shadow: 2px 2px 0 #faa039, 2px -2px 0 #faa039, -2px 2px 0 #faa039, -2px -2px 0 #faa039, 2px 0px 0 #faa039, 0px 2px 0 #faa039, -2px 0px 0 #faa039, 0px -2px 0 #faa039, 0px 2px 2px rgba(206, 89, 55, 0);
+
+}
+
+.personal li:hover img {
+  filter: brightness(141%) hue-rotate(10deg) saturate(107%);
+  -webkit-filter: brightness(141%) hue-rotate(10deg) saturate(107%);
+  -moz-filter: brightness(141%) hue-rotate(10deg) saturate(107%);
+}
+
+.sitely li img {
+  transition: filter 0.3s ease;
+}
+
+.sitely li:hover img {
+  filter: brightness(193%) hue-rotate(-13deg) saturate(37%) contrast(110%);
+  -webkit-filter: brightness(193%) hue-rotate(-13deg) saturate(37%) contrast(110%);
+  -moz-filter: brightness(193%) hue-rotate(-13deg) saturate(37%) contrast(110%);
+}
+
+.external li img {
+  transition: filter 1s ease;
+}
+
+
+
+.external li:hover img {
+  filter: sepia(34%) brightness(72%) hue-rotate(360deg) saturate(1000%) contrast(200%);
+  -webkit-filter: sepia(34%) brightness(72%) hue-rotate(360deg) saturate(1000%) contrast(200%);
+  -moz-filter: sepia(34%) brightness(72%) hue-rotate(360deg) saturate(1000%) contrast(200%);
+}
+
+.personal li {
+  width: 100%;
+  font-size: 18px;
+  font-family: 'ADLaM Display';
+  color: white;
+  text-shadow: 2px 2px 0 #696969, 2px -2px 0 #696969, -2px 2px 0 #696969, -2px -2px 0 #696969, 2px 0px 0 #696969, 0px 2px 0 #696969, -2px 0px 0 #696969, 0px -2px 0 #696969, 0px 2px 2px rgba(206, 89, 55, 0);
+  padding-top: 10px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  height: 25x;
+  border-bottom: 0px solid turquoise;
+  box-shadow: -1px -1.4px 1px inset #969c9e, 2px 3px 1.5px inset white, 0px 0px 2px #a4aaab;
+  background: linear-gradient(to bottom, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%);
+}
+
+
+.external li {
+  width: 100%;
+  font-size: 18px;
+  font-family: 'ADLaM Display';
+  color: white;
+  text-shadow: 2px 2px 0 #696969, 2px -2px 0 #696969, -2px 2px 0 #696969, -2px -2px 0 #696969, 2px 0px 0 #696969, 0px 2px 0 #696969, -2px 0px 0 #696969, 0px -2px 0 #696969, 0px 2px 2px rgba(206, 89, 55, 0);
+  padding-top: 10px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  height: 25x;
+  border-bottom: 0px solid turquoise;
+  box-shadow: -1px -1.4px 1px inset #969c9e, 2px 3px 1.5px inset white, 0px 0px 2px #a4aaab;
+  background: linear-gradient(to bottom, rgba(246, 248, 249, 1) 0%, rgba(229, 235, 238, 1) 50%, rgba(215, 222, 227, 1) 51%, rgba(245, 247, 249, 1) 100%);
+}
+
+
+/* a {
+  color: #fff;
+  margin-left: 5px;
+  text-decoration: none;
+  transition: margin-left 0.3s ease;
+}
+
+a:hover {
+  margin-left: 15px;
+}
+
+li {
+  list-style-type: none;
+  padding: 0px;
+}
+
+ul {
+  padding-left: 0px;
+  margin: 0px;
+} */
+
+.navigation {
+  border: 2px groove #77ceed;
+  background: #C6C6C6;
+  overflow: hidden;
+}
+
+.mini {
+  width: 100%;
+  height: 10%;
+  margin-top: 10px;
+  border: 2px groove #77ceed;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.bar {
+  background: rgb(255, 236, 184);
+  background: linear-gradient(80deg, rgba(255, 236, 184, 1) 0%, rgba(255, 218, 134, 1) 100%);
+  padding: 7px;
+  width: 100.5%;
+  border-top: 1px dotted #666666;
+  border-bottom: 1px dotted #666666;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 2px;
+  margin-bottom: 5.5px;
+  color: #2c8ec7;
+  margin-left: -5px;
+  background: rgb(255, 199, 209);
+  background: linear-gradient(80deg, rgba(165, 223, 250) 0%, rgba(235, 250, 255) 13%);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
+}
+
+
+
+.post p {
+  @apply leading-7;
+}
+
+.post code {
+  @apply rounded-sm bg-neutral-800 px-1 py-[2px] text-orange-500;
+}
+
+.post h2 {
+  @apply mt-6 text-3xl text-neutral-100;
+}
+
+.post h3 {
+  @apply mt-4 text-xl text-neutral-100;
+}
+
+.post code {
+  @apply rounded-sm bg-neutral-800 px-1 py-[2px] text-red-500;
+}
+
+.post a {
+  @apply text-neutral-100 underline;
+}
+
+.post ul {
+  @apply list-disc;
+}
+
+.post blockquote {
+  @apply flex flex-row gap-2 before:block before:h-auto before:w-1 before:max-w-[1px] before:bg-red-400 before:content-[''];
+}
+
+.post pre {
+  @apply p-4;
+}
+
+.post pre>code {
+  @apply bg-transparent;
+}

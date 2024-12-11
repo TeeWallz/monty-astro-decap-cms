@@ -1,0 +1,34 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import formatDate from "@/utils/formatDate";
+
+export async function getStaticPaths() {
+  const chumps = await getCollection("chumps");
+
+  return chumps.map((chump) => ({
+    params: { slug: chump.slug },
+    props: { chump },
+  }));
+}
+
+type Props = {
+  chump: CollectionEntry<"chumps">;
+};
+
+const { chump } = Astro.props;
+const { Content } = await chump.render();
+---
+
+<Layout title={chump.data.name}>
+  <main class="post mx-auto flex w-full max-w-prose flex-col gap-4">
+    <header role="presentation">
+      <h1 class="text-md">
+        {chump.data.name} - {formatDate(chump.data.date)}
+      </h1>
+      <p class="italic">{chump.data.thanks}</p>
+    </header>
+
+    <Content />
+  </main>
+</Layout>
