@@ -19,10 +19,51 @@ let enrichedChumps = enrichChumpData(rawChumps);
 
 // newest chump
 const newestChump = enrichedChumps[0];
+
+import removeTrailingSlash from "@/utils/removeTrailingSlash";
+
+const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
 <Layout>
-  <main class="flex flex-col gap-20 main_container max-w-96">
+  <main class="flex flex-row gap-3 main_container">
+    <div id="left-hand-menu" class="left-hand-menu cute-border">
+      <h2 class="menu_header">Menu</h2>
+      <hr/>
+      <nav role="navigation" style="">
+        <ul role="list" class="">
+          <li style="">
+            <a
+              href="/"
+              class:list={{
+                ["hover:text-amber-500"]: true,
+                ["text-black"]: pathname === "/",
+              }}>
+                <img src="/images/home.gif" alt="home" style=""/>
+              </a>
+          </li>
+          <li style="">
+            <a
+              href="/history"
+              class:list={{
+                ["hover:text-amber-500"]: true,
+                ["text-black"]: pathname === "/history",
+              }}>
+                <img src="/images/fzghistorygif.gif" alt="history" style=""/>
+              </a>
+          </li>
+          <li>
+            <a
+              href="/"
+              class:list={{
+                ["hover:text-amber-500"]: true,
+                ["text-black"]: pathname === "/",
+              }}>Stats</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
     <article class="flex flex-col gap-4 text-center">
       <!-- center text -->
       <div class="cute-border flex flex-row justify-center items-center gap-2 h-24" style="flex-direction: column; height: fit-content;">
@@ -51,42 +92,12 @@ const newestChump = enrichedChumps[0];
           class="w-full h-auto cute-border -z-10"
       </div> -->
 
-      <div class="parent">
+      <div class="parent cute-border">
         <img class="image1" src={newestChump.data.image}/>
         <img class="image2" src="images/fire_border_60_speed.gif" />
       </div>
 
       <!-- <SocialLinks /> -->
     </article>
-
-    <!-- <article class="flex flex-col gap-8">
-      <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">
-          Selected projects ({projects.length})
-        </h3>
-      </header>
-      {projects.length === 0 && <p>Oops, I must work^^^^^</p>}
-
-      <section class="flex flex-col gap-4">
-        {
-          projects.length !== 0 &&
-            projects.map((project) => <ProjectCard {...project} />)
-        }
-      </section>
-    </article> -->
-
-    <!-- <article class="flex flex-col gap-8">
-      <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">Get in touch</h3>
-      </header>
-      <p>
-        Email me at <Link
-          href={`mailto:${presentation.mail}`}
-          label={presentation.mail}
-        /> or follow me via my social links.
-      </p>
-
-      <SocialLinks />
-    </article> -->
   </main>
 </Layout>

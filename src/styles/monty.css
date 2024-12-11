@@ -32,6 +32,14 @@
   background-clip: border-box;
 }
 
+.menu_header{
+  font-family: "abaddon_light";
+  text-align: center;
+  background: #21B553;
+  color: white;
+  font-size: 10px;
+}
+
 .center-everything {
   display: flex;
   justify-content: center; /* Centers horizontally */
