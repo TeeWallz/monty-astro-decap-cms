@@ -30,6 +30,7 @@ collections:
   - name: chump
     label: Chumps
     folder: src/content/chumps
+    media_folder: "{{media_folder}}/chumps"
     create: true
     format: frontmatter
     slug: "{{date}}{{name_slug}}"

@@ -26,78 +26,42 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
 <Layout>
-  <main class="flex flex-row gap-3 main_container">
-    <div id="left-hand-menu" class="left-hand-menu cute-border">
-      <h2 class="menu_header">Menu</h2>
-      <hr/>
-      <nav role="navigation" style="">
-        <ul role="list" class="">
-          <li style="">
-            <a
-              href="/"
-              class:list={{
-                ["hover:text-amber-500"]: true,
-                ["text-black"]: pathname === "/",
-              }}>
-                <img src="/images/home.gif" alt="home" style=""/>
-              </a>
-          </li>
-          <li style="">
-            <a
-              href="/history"
-              class:list={{
-                ["hover:text-amber-500"]: true,
-                ["text-black"]: pathname === "/history",
-              }}>
-                <img src="/images/fzghistorygif.gif" alt="history" style=""/>
-              </a>
-          </li>
-          <li>
-            <a
-              href="/"
-              class:list={{
-                ["hover:text-amber-500"]: true,
-                ["text-black"]: pathname === "/",
-              }}>Stats</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </div>
     <article class="flex flex-col gap-4 text-center">
       <!-- center text -->
       <div class="cute-border flex flex-row justify-center items-center gap-2 h-24" style="flex-direction: column; height: fit-content;">
         <div class="days_container" style="display: flex; flex-direction: row; align-items: center; height: 100px;">
           <DancingText text={newestChump.data.streak.toString()} /> 
           <div>
-            days
+            days ago
           </div>
         </div>
         <div class="days_as_of" style="display: flex; flex-direction: row; align-items: center;">
           <h2>
-          as of {newestChump.data.name} on {newestChump.data.date.toLocaleDateString("en-GB", {
-          weekday: "long",
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-          })}
+          on 
+          <span style="font-weight: bolder;">
+            {newestChump.data.date.toLocaleDateString("en-GB", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+            })}
+          </span>
           </h2>
         </div>
       </div>
 
-      <!-- <div class="gif-border">
-        <img
-          src={newestChump.data.image}
-          alt={newestChump.data.name}
-          class="w-full h-auto cute-border -z-10"
-      </div> -->
-
+      <div class="cute-border">
+        <div class="wrapper">
+          <div class="wordart radial">
+              <span class="text" data-text="Topless in Transit: Yokohama Truck Gets a Free Roof Reduction">Topless in Transit: Yokohama Truck Gets a Free Roof Reduction</span>
+          </div>
+      </div>
+      </div>
       <div class="parent cute-border">
         <img class="image1" src={newestChump.data.image}/>
         <img class="image2" src="images/fire_border_60_speed.gif" />
+        <img class="image3" src="images/general/bloodbar1.gif" />
       </div>
 
-      <!-- <SocialLinks /> -->
     </article>
-  </main>
 </Layout>

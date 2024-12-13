@@ -1,3 +1,54 @@
+/* -------------------------------------
+ ___ ___ ___ ___ _____
+| _ \ __/ __| __|_   _|
+|   / _|\__ \ _|  | |
+|_|_\___|___/___| |_|
+
+-------------------------------------- */
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+html,
+body {
+  /* height: 100%; */
+  /* font-family: MicrosoftSansSerif; */
+  font-family: comic_sans;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: none;
+  background: #3dff32;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjM2RmZjMyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMzBmNGZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmMDBmYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(-45deg, #3dff32 0%, #30f4ff 50%, #ff00fa 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #3dff32), color-stop(50%, #30f4ff), color-stop(100%, #ff00fa));
+  background: -webkit-linear-gradient(-45deg, #3dff32 0%, #30f4ff 50%, #ff00fa 100%);
+  background: -o-linear-gradient(-45deg, #3dff32 0%, #30f4ff 50%, #ff00fa 100%);
+  background: -ms-linear-gradient(-45deg, #3dff32 0%, #30f4ff 50%, #ff00fa 100%);
+  background: linear-gradient(135deg, #3dff32 0%, #30f4ff 50%, #ff00fa 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3dff32', endColorstr='#ff00fa', GradientType=1);
+  background-attachment: fixed;
+}
+
+/* -------------------------------------
+ ___ ___  _  _ _____ ___
+| __/ _ \| \| |_   _/ __|
+| _| (_) | .` | | | \__ \
+|_| \___/|_|\_| |_| |___/
+
+-------------------------------------- */
+/* @font-face {
+  font-family: 'MicrosoftSansSerif';
+  src: url('fonts/MicrosoftSansSerif.eot?') format('eot'), url('fonts/MicrosoftSansSerif.woff') format('woff'), url('fonts/MicrosoftSansSerif.ttf') format('truetype'), url('fonts/MicrosoftSansSerif.svg#MicrosoftSansSerif') format('svg');
+} */
+
+@font-face {
+  font-family: 'comic_sans';
+  src: url('fonts/ComicNeueSansID.ttf') format('truetype');
+}
+
 /* .background{
   background: repeating-linear-gradient(
     to right,
@@ -9,7 +60,7 @@
 } */
 
 /* above, but colors are lighter */
-.background {
+.monty_background {
   background: repeating-linear-gradient(
     to right,
     #f0b8a3,
@@ -20,7 +71,7 @@
 }
 
 .main_container {
-  overflow: auto;
+  /* overflow: auto; */
   /* border-radius: 5px; */
   /* border-radius: 0 0 5px 5px; */
   /* border: 1px solid hotpink; */
@@ -33,11 +84,11 @@
 }
 
 .menu_header{
-  font-family: "abaddon_light";
   text-align: center;
   background: #21B553;
   color: white;
-  font-size: 10px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 .center-everything {
@@ -81,6 +132,9 @@
   top: 0px;
   left: 0px;
   border: 1px green solid;
+  width: 100%;
+}
+.image3 {
   width: 100%;
 }
 
