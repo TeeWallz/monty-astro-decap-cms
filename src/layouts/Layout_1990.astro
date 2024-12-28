@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+  <head>
+    <meta content='width=device-width, initial-scale=0.6' name='viewport'/>
+    <link rel="stylesheet" href="/css/1990/monty.css" />
+  </head>
+  <body>
+  <div align="center">
+    <h1>
+      <img id="header" class="max-width-fill_available_space" src="/images/general/monty_header_transparent.png" alt="monty" />
+    </h1>
+  </div>
+
+  <table>
+    <tr>
+      <!-- left hand navigational menu -->
+      <td>
+        <div id="sidebar">
+          <a href="/1990">Home</a>
+          <br>
+          <a href="/1990/history">History</a>
+          <br>
+          <a href="/1990/stats">Stats</a>
+          <br>
+          <a href="/1990/guestbook">Guestbook</a>
+          <br>
+          <a href="/1990/links">Links</a>
+          <br>
+          <a href="/2000">2000's</a>
+        </div>
+      </td>
+
+      <!-- main content -->
+      <td>
+        <div class="text">
+          <slot />
+        </div>
+      </td>
+
+    </tr>
+    <tr>
+      <td colspan="2">
+        <div id="footernav">
+          <a href="/1990">Home</a>
+          <a href="/1990/history">History</a>
+          <a href="/1990/stats">Stats</a>
+          <a href="/1990/guestbook">Guestbook</a>
+          <a href="/1990/links">Links</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </body>
+</html>

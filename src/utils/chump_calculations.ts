@@ -1,6 +1,7 @@
+import { getCollection } from "astro:content";
 
 export function calculateStreakFromStrings(chumpAfter: string, currentDate: string): number {
-  const prevDate = new Date(previousDate);
+  const prevDate = new Date(chumpAfter);
   const currDate = new Date(currentDate);
   const timeDiff = Math.abs(currDate.getTime() - prevDate.getTime());
   return Math.floor(timeDiff / (1000 * 3600 * 24)); // Difference in days
@@ -55,10 +56,27 @@ export function enrichChumpData(chumpData: any[]): any[] {
     const chump = chumpData[i].data.date;
     const chumpAfter = i === 0 ? today : chumpData[i - 1].data.date;
     chumpData[i].data.streak = calculateStreak(chump, chumpAfter);
+    chumpData[i].data.localisedDate = chumpData[i].data.date.toLocaleDateString("en-GB", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })
     let kk = 0;
   }
 
 
 
   return chumpData;
+}
+
+export async function getNewestChump(): Promise<any>{
+  let rawChumps = await getCollection("chumps");
+  let enrichedChumps = enrichChumpData(rawChumps);
+  return enrichedChumps[0];
+}
+
+export async function getChumps(): Promise<any[]> {
+  let rawChumps = await getCollection("chumps");
+  return enrichChumpData(rawChumps);
 }

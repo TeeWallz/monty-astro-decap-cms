@@ -1,0 +1,104 @@
+---
+import "@fontsource/open-sans";
+
+export interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+
+import removeTrailingSlash from "@/utils/removeTrailingSlash";
+const pathname = removeTrailingSlash(Astro.url.pathname);
+import LeftHandMenu from "@/components/2000/LeftHandMenu.astro";
+import BottomMenu from "@/components/2000/BottomMenu.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <link rel="stylesheet" href="/css/2000/monty.css" />
+  <link rel="stylesheet" href="/css/2000/wordart/style.css" />
+  <link rel="stylesheet" href="/css/2000/tailwind_preflight.css" />
+  <script type="module">
+    import { trailingCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+    window.addEventListener("load", (event) => {
+      new trailingCursor({element: document.querySelector("html")});
+    });
+  </script>
+
+  <body class="">
+    <!-- Header -->
+    <div class="layout_main_container monty_background">
+
+      <div class="header_image_container">
+        <img src="/images/general/monty_header_transparent.png" alt="monty" class="header_image" />
+      </div>
+
+      <div class="body_wrapper">
+
+      <LeftHandMenu />
+
+      <!-- Main Content, two columns -->
+      <div class="main_container">
+        
+        
+        <!-- ? -->
+        <main class="main_container_two_lol">
+          <div style="width: 100%;">
+            <slot />
+          </div>
+        </main>
+
+        
+        
+      </div>
+
+      
+      <style is:global>
+        html {
+          font-family: "Open Sans";
+        }
+      </style>
+      </div>
+      <BottomMenu />
+
+    </div>
+
+    <div class="footer_gif_wrapper">
+      <div class="footer_gifs">
+        <img src="/images/general/88tgb-button1.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/adv_rar2.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/angelfire.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/aniquake.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/anybrowser2.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/b3.jpg" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/b9.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/b11.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/d15.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/e7.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/e38.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/netscape.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/quicktime.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/win98_89.gif" style="image-rendering: crisp-edges;"/>
+      </div> 
+      <div class="footer_gifs">
+        <!-- <img src="/images/general/banana.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/carspin.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/cauldron2.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/curieux.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/laughmuttey.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/magic.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/spiderman.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/200w.gif" style="image-rendering: crisp-edges;"/> -->
+
+        <img src="/images/general/ADVERTISEMENT_BANNER.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/ani_advertisement.gif" style="image-rendering: crisp-edges;"/>
+        <img src="/images/general/monkeyadvert.gif" style="image-rendering: crisp-edges;"/>
+        <!-- <img src="/images/general/ngage_advert.gif" style="image-rendering: crisp-edges;"/> -->
+      </div>
+    </div>  
+
+
+
+  </body>
+</html>

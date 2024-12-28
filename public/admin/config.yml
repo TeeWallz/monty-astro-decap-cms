@@ -13,31 +13,18 @@ public_folder: /images
 site_url: "https://astro-decapcms-starter.netlify.app/" # your site name
 
 collections:
-  - name: post
-    label: Posts
-    folder: src/content/posts
-    create: true
-    format: frontmatter
-    preview_path: post/{{slug}}
-    fields:
-      - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: publishedAt, label: Date, widget: date }
-      - {label: "Publish", name: "isPublish", widget: "boolean", default: true}
-      - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
-      - { name: body, label: Body, widget: markdown }
-
   - name: chump
     label: Chumps
     folder: src/content/chumps
-    media_folder: "{{media_folder}}/chumps"
+    media_folder: /public/images/chumps
+    public_folder: /public/images/chumps
     create: true
     format: frontmatter
     slug: "{{date}}{{name_slug}}"
     preview_path: chump/{{date}}
     fields:
       - { name: name, label: Name, widget: "string" }
-      - { name: name_slug, default: "_short-name-with-dashes", label: "Short name. One word. Same date tiebreaker", widget: "string" }
+      - { name: name_slug, default: "_short-name-with-dashes", label: "Short name with dashes", widget: "string" }
       - label: "Date"
         name: "date"
         widget: "datetime"
@@ -47,6 +34,7 @@ collections:
         # timeFormat: false
         # format: "YYYY-MM-DD"
         picker_utc: false
+      - { name: date_chump, default: 1, label: "Order of chump on a given day", widget: "number", value_type: "int" }
       - { name: thanks, label: Thanks, widget: "string" }
       - { name: url, label: URL, widget: "string" }
       - { name: image, label: Image, widget: "image" }

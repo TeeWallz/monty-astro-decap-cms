@@ -1,0 +1,36 @@
+---
+import Layout from "@/layouts/Layout_1990.astro";
+import { getChumps } from "@/utils/chump_calculations";
+const chumps = await getChumps();
+---
+<Layout>
+	<h2>History of Failed Attempts to Barbecue the Montague</h2>
+
+    <!-- 1990s style table -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {chumps.map((chump) => (
+                <tr>
+                    <td>{chump.data.name}</td>
+                    <td>{chump.data.date.toLocaleDateString("en-GB", {
+                        weekday: "long",
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                    })}</td>
+                    <td>
+                        <a href={chump.data.image}>
+                            <img src={chump.data.image} alt={chump.data.name} style="max-width: 100px;"/>
+                        </a>
+                    </td>
+                </tr>
+            ))}
+        </tbody>
+</Layout>

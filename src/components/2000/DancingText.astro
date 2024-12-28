@@ -1,0 +1,26 @@
+---
+type Props = {
+  text: string;
+}
+
+const { text } = Astro.props;
+
+// this converts each character into a series of gifs, s tored in /images/dancing_text/*.gif
+const textArray = text.split("");
+---
+<style>
+  /* every img, other than the first, will have negative margin to overlap the previous image */
+  img:not(:first-child) {
+    margin-left: -40px;
+  }
+</style>
+
+<div style="height: 100%; display: flex; flex-direction: row; align-items: center;">
+  {textArray.map((char, index) => (
+    <img
+      src={`/images/dancing_text/${char}.gif`}
+      alt={char}
+      style={`animation: dance 1s infinite ${index * 0.1}s; flex: 1 1 0px; width: 0; `}
+    />
+  ))}
+</div>

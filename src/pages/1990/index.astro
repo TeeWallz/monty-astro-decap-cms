@@ -1,0 +1,26 @@
+---
+import Layout from "@/layouts/Layout_1990.astro";
+import { getNewestChump } from "@/utils/chump_calculations";
+const newestChump = await getNewestChump();
+---
+<Layout>
+	<h2>How Many Days Since The Montague Street Bridge Has Been Hit?</h2>
+	<p>{newestChump.data.streak.toString()} days ago</p>
+	<p> 
+		on 
+		<span>
+		  {newestChump.data.date.toLocaleDateString("en-GB", {
+		  weekday: "long",
+		  day: "numeric",
+		  month: "long",
+		  year: "numeric",
+		  })}
+		</span>
+	</p>
+
+	<hr>
+
+	<h2>What is this?</h2>
+	<p>Insert explanation here</p>
+	<p>Maybe map as well?</p>
+</Layout>

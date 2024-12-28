@@ -1,0 +1,64 @@
+---
+import Layout from "@/layouts/Layout_2000.astro";
+import DancingText from "@/components/2000/DancingText.astro";
+import { getNewestChump } from "@/utils/chump_calculations";
+const newestChump = await getNewestChump();
+---
+
+<Layout>
+    <article class="main_container_inner">
+      <!-- center text -->
+      <div class="cute-border chump_days_hero_box">
+        <div class="days_container">
+          <div style="">
+            <DancingText text={newestChump.data.streak.toString()} />
+          </div> 
+          <div>
+            days ago
+          </div>
+        </div>
+        <div class="days_as_of">
+          <h2>
+          on 
+          <span>
+            {newestChump.data.date.toLocaleDateString("en-GB", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+            })}
+          </span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="cute-border">
+        <div class="wrapper">
+          <div class="wordart radial">
+              <span class="text" data-text="Topless in Transit: Yokohama Truck Gets a Free Roof Reduction">Topless in Transit: Yokohama Truck Gets a Free Roof Reduction</span>
+          </div>
+          <div>
+              <div>Link</div>
+              <div>Link gif</div>
+          </div>  
+        </div>
+      </div>
+      <div class="chump_image_left_hand_gifs">
+        <div style="flex: 1;">
+          <img src="/images/general/simpsonnelson01.gif" style="image-rendering: crisp-edges;"/>
+          <img src="/images/general/mouseshootoff.gif" style="image-rendering: crisp-edges;"/>
+        </div>
+        <div class="parent cute-border" style="flex: 3; padding: 0;">
+
+          <div>
+            <img class="image1" src={newestChump.data.image}/>
+            <img class="image2" src="/images/general/fire_border_60_speed.gif" />
+            <img src="/images/general/bloodbar1.gif" style="position: absolute;" />
+          </div>
+        </div>
+        <div style="flex: 1;">
+          gifs
+        </div>  
+      </div>
+    </article>
+</Layout>

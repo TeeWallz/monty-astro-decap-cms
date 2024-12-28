@@ -1,0 +1,38 @@
+---
+import Layout from "@/layouts/Layout_2000.astro";
+import { getChumps } from "@/utils/chump_calculations";
+let enrichedChumps = await getChumps();
+---
+
+<Layout title="History">
+  <main class="flex flex-col gap-5">
+    <div>
+        <img src="/images/general/Accident_Pic_17077.gif" />
+    </div>
+      <article class="flex flex-col gap-1 text-center">
+          <table class="history_table">
+              <thead>
+                  <tr>
+                      <th class="px-4 py-2">Name</th>
+                      <th class="px-4 py-2">Date</th>
+                      <th class="px-4 py-2">Image</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {enrichedChumps.map((chump) => (
+                      <tr>
+                          <td class="border px-4 py-2">{chump.data.name}</td>
+                          <td class="border px-4 py-2">{chump.data.date.toLocaleDateString("en-GB", {
+                              weekday: "long",
+                              day: "numeric",
+                              month: "long",
+                              year: "numeric",
+                          })}</td>
+                            <td class="border px-4 py-2"><img src={chump.data.image} alt={chump.data.name} /></td>
+                      </tr>
+                  ))}
+              </tbody>
+          </table>
+      </article>
+  </main>
+  </Layout>
